@@ -1,0 +1,41 @@
+@model BookstoreApp.Models.Book
+
+@{
+    ViewData["Title"] = "Add New Book";
+}
+
+<div class="container book-form-container">
+    <h2 class="text-center">Add New Book</h2>
+    <hr />
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Title" class="form-control" placeholder="Book Title" />
+                    <label asp-for="Title">Title</label>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Author" class="form-control" placeholder="Author" />
+                    <label asp-for="Author">Author</label>
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Price" class="form-control" placeholder="Price" />
+                    <label asp-for="Price">Price</label>
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

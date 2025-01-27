@@ -1,0 +1,40 @@
+@model BookstoreApp.Models.Book
+
+@{
+    ViewData["Title"] = "Edit Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="auth-bg">
+    <div class="auth-card">
+        <h2 class="text-center">Edit Book</h2>
+        <hr />
+
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-floating mb-3">
+                <input asp-for="Title" class="form-control" placeholder="Title" />
+                <label asp-for="Title">Title</label>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Author" class="form-control" placeholder="Author" />
+                <label asp-for="Author">Author</label>
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Price" class="form-control" placeholder="Price" />
+                <label asp-for="Price">Price</label>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-action="Index" class="btn btn-light">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
